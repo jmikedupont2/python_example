@@ -1,0 +1,25 @@
+bool
+bool (*)(const pybind11::object&, const pybind11::object&)
+const Foo& (*)(Foo*)
+const char (&)[1]
+const char (&)[9]
+const char* const&
+int (*)(int, int)
+pybind11::cpp_function
+pybind11::detail::value_and_holder
+pybind11::dict (*)(pybind11::handle)
+pybind11::handle&
+pybind11::int_
+pybind11::int_ (*)(const pybind11::object&)
+pybind11::none
+pybind11::object (*)(const pybind11::object&)
+pybind11::object (*)(const pybind11::object&, const pybind11::object&)
+pybind11::object&
+pybind11::str (*)(const pybind11::object&)
+pybind11::str (*)(pybind11::handle)
+pybind11::str&
+pybind11::tuple&
+std::__cxx11::basic_string<char>
+std::__cxx11::basic_string<char> (*)(pybind11::handle)
+void (*)(pybind11::detail::value_and_holder&)
+void (*)(pybind11::handle)

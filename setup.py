@@ -16,13 +16,27 @@ __version__ = "0.0.1"
 #   Sort input source files if you glob sources to ensure bit-for-bit
 #   reproducible builds (https://github.com/pybind/python_example/pull/53)
 
-ext_modules = [
-    Pybind11Extension("python_example",
+
+ext = Pybind11Extension("python_example",
         ["src/main.cpp"],
         # Example: passing in the version to the compiled code
         define_macros = [('VERSION_INFO', __version__)],
-        ),
-]
+                      include_dirs=[
+                          
+                          "/testing/pybind11/include/"
+                      ],
+                      
+                    )
+
+ext._add_cflags(["-g",])
+ext._add_cflags(["-O0",])
+ext._add_cflags(["-std=gnu++2b",])
+#ext._add_cflags(["--save-temps",])
+ext._add_cflags(['--verbose',])
+
+ext._add_ldflags(['-g'])
+ext._add_ldflags(['--verbose'])
+ext_modules = [ext,]
 
 setup(
     name="python_example",
